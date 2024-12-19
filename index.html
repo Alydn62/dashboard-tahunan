@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard Laporan Penjualan yang menampilkan grafik dan tabel interaktif untuk data tahun 2022 dan 2023.">
+    <title>Dashboard Laporan Penjualan</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Menu Dashboard</h2>
+        <ul>
+            <li><a href="#" aria-label="Laporan Penjualan" onclick="showContent('dashboard')">Laporan Penjualan</a></li>
+            <li><a href="#" aria-label="Laporan Bulanan" onclick="showContent('monthly')">Laporan Bulanan</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="dashboard">
+        <h1>Dashboard Laporan Penjualan Tahunan</h1>
+        <canvas id="salesChart" width="800" height="400"></canvas>
+        <canvas id="lineChart" width="800" height="400"></canvas>
+        <canvas id="pieChart" width="800" height="400"></canvas>
+        <h2>Data Penjualan Tahunan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bulan</th>
+                    <th>Penjualan 2022</th>
+                    <th>Penjualan 2023</th>
+                </tr>
+            </thead>
+            <tbody id="yearlyTableBody"></tbody>
+        </table>
+    </div>
+
+    <div class="content" id="monthly" style="display:none;">
+        <h2>Laporan Bulanan Penjualan</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bulan</th>
+                    <th>Penjualan 2022</th>
+                    <th>Penjualan 2023</th>
+                    <th>Selisih Penjualan</th>
+                </tr>
+            </thead>
+            <tbody id="monthlyTableBody"></tbody>
+        </table>
+    </div>
+</body>
+</html>
